@@ -1,0 +1,10 @@
+# Array Difference
+
+## Problem Statement
+Your goal is to implement a difference function, which subtracts one list from another.
+
+## Solution
+```javascript
+function arrayDiff(a, b) {
+    return a.filter(element => !b.includes(element));
+}
