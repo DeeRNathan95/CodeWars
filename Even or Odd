@@ -1,0 +1,14 @@
+Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+function evenOrOdd(number) {
+  if (number % 2 === 0) {   // Check if the number is divisible by 2
+    return "Even";          // Return "Even" if true
+  } else {
+    return "Odd";           // Return "Odd" if false
+  }
+}
+
+
+===========================================
+I tried to return using console.log but i didnt need to because the question asks to return even or odd. The value itself of that function.
+Only use return when you need the function to give back a value that can be used elsewhere in the program. Use console.log if you just want to display something on the console without needing the value elsewhere.
