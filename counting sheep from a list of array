@@ -1,0 +1,39 @@
+Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+For example,
+
+[true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]
+The correct answer would be 17.
+
+Hint: Don't forget to check for bad values like null/undefined
+
+
+=====================================================================================
+
+Solution:
+
+function countSheeps(sheep) {
+  // TODO
+  return sheep.filter(s => s === true).length;
+}
+
+
+========================================================================================
+
+Notes:
+
+.filter(s => s === true): Filters the array to only include the elements that are true. It also inherently skips null, undefined, and false values.
+.length: The .length property is used to count the number of true values (i.e., the number of sheep present).
+
+The expression s => s === true is a concise way of writing a function using an arrow function in JavaScript. Here's a detailed breakdown of what it does:
+
+s => s === true is an arrow function that checks if each element s in the array is exactly true.
+The filter() method iterates over each element of the array and passes it to the function s => s === true.
+s represents each individual element in the array (in this case, each sheep).
+s === true checks whether s is exactly true. This excludes false, null, undefined, or any other non-boolean values.
+The filter() method only keeps the elements that return true from this check and removes the rest.
