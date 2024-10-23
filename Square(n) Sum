@@ -1,0 +1,54 @@
+Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+For example, for [1, 2, 2] it should return 9 because 
+1 square + 2 square + 2 square = 9
+
+
+
+
+====================================================================================================================
+
+Solution:
+
+function squareSum(numbers){
+return numbers.map(num => num * num).reduce((sum, current) => sum + current, 0);
+}
+=============================================================================================================================
+Notes:
+
+.map(num => num * num) takes each number from the array and squares it.
+
+
+The `.reduce()` function in JavaScript is a powerful array method that allows you to "reduce" an array to a single value by iterating over the array and applying a function on each element.
+
+Here’s a breakdown of `.reduce((sum, current) => sum + current, 0)` in the context of your function:
+
+### Components of `.reduce()`:
+- **Initial value (0)**: This is the second argument passed to `.reduce()`. It tells the function what value to start with (in this case, we start with `0`, because we’re summing the numbers).
+- **Callback function `(sum, current) => sum + current`**: This is the function applied on each element of the array. It takes two parameters:
+  - **`sum` (or accumulator)**: This keeps track of the running total of the sum.
+  - **`current`**: This is the current element in the array that we are adding to the sum.
+
+### Step-by-Step Breakdown:
+1. **Initialization**: `.reduce()` starts with the initial value you provided (in this case `0`).
+   
+2. **First iteration**: It takes the first element of the array (let’s say the first squared value is `1`).
+   - The callback is invoked: `sum` is `0`, `current` is `1` → `sum + current = 0 + 1 = 1`
+   - Now `sum` becomes `1`.
+
+3. **Second iteration**: It moves to the next element (let’s say the second squared value is `4`).
+   - The callback is invoked again: `sum` is now `1`, `current` is `4` → `sum + current = 1 + 4 = 5`
+   - Now `sum` becomes `5`.
+
+4. **Third iteration**: It processes the next squared element (let’s say it's another `4`).
+   - The callback is invoked again: `sum` is now `5`, `current` is `4` → `sum + current = 5 + 4 = 9`
+   - Now `sum` becomes `9`.
+
+5. **Completion**: Since there are no more elements in the array, the `.reduce()` function returns the final value of `sum`, which is `9`.
+
+### Summary:
+- `.reduce()` starts with an initial value (`0` in this case).
+- It iterates over each element in the array, updating the `sum` by adding the `current` element to it.
+- After processing all the elements, it returns the final value of `sum`, which is the sum of all squared numbers.
+
+Let me know if that clears things up or if you need more details!
