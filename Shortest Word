@@ -1,0 +1,25 @@
+Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types.
+
+===================================================
+my code:
+
+function findShort(s){
+  const words = s.split(' '); //s means string. split this string wherever there's a space
+  const length = words.map(i => i.length); // .map() loops through each element of the array (words), Runs the arrow function on it (i => i.length),And returns a new array containing the results.
+  const shortest = Math.min(...length); // Math.min() can’t handle arrays directly. It only works with separate numbers.
+  return shortest;
+}
+
+//example:
+//Math.min(4, 4, 3) // ✅ works → returns 3
+//Math.min([4, 4, 3]) // ❌ doesn’t work → returns NaN
+//So, the spread operator (...) is used to unpack the array values into individual arguments.
+
+=========================================================
+better code:
+
+function findShort(s){
+    return Math.min(...s.split(" ").map (s => s.length));
+}
