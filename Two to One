@@ -1,0 +1,29 @@
+Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string (alphabetical ascending), the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+
+Examples:
+a = "xyaabbbccccdefww"
+b = "xxxxyyyyabklmopq"
+longest(a, b) -> "abcdefklmopqwxy"
+
+a = "abcdefghijklmnopqrstuvwxyz"
+longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+==================
+My code
+function longest(s1, s2) {
+  // combine s1 and s2
+  // remove duplicates
+  // sort them in order.
+  
+  const combined = s1 + s2;
+  const unique = new Set(combined); // Set (removed duplicates automatically)
+  const sorted = [...unique].sort(); //Convert back to an array [...unique] and sort alphabetically .sort()
+  return sorted.join('') //Join back to a string/combine array into string and return
+  
+}
+
+
+==========================
+Better code:
+
+const longest = (s1, s2) => [...new Set(s1+s2)].sort().join('')
