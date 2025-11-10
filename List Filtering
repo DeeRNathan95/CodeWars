@@ -5,8 +5,9 @@ filter_list([1,2,'a','b']) == [1,2]
 filter_list([1,'a','b',0,15]) == [1,0,15]
 filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 
-===========================
-My coding
+
+=========================
+My code:
 
 function filter_list(l) {
   // Return a new array with the strings filtered out
@@ -22,9 +23,35 @@ function filter_list(l) {
 
 };
 
-======================
-Better:
 
+============================
+Best practise
 function filter_list(l) {
   return l.filter(function(v) {return typeof v == 'number'})
 }
+=================================================
+What Is .filter()?
+.filter() is a built-in array method in JavaScript. It lets you loop through an array and keep only the items that pass a test.
+Think of it like a smart sieve:
+- You give it a test (called a callback function)
+- It runs that test on every item
+- It returns a new array with only the items that passed
+
+🧠 Breaking Down the Callback: item => typeof item === "number"
+This is an arrow function. It’s shorthand for:
+function(item) {
+  return typeof item === "number";
+}
+
+
+Let’s dissect it:
+🔹 item
+- This is a placeholder for each element in the array l
+- As .filter() loops through the array, it passes each element into this function as item
+🔹 typeof item === "number"
+- This is your test condition
+- It checks if the current item is a number
+- If true, .filter() keeps it
+- If false, .filter() skips it
+
+
