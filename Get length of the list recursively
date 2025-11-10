@@ -1,0 +1,47 @@
+===========
+  
+Write funcion lenR which returns the length of a given list. Try no to cheat and provide recursive solution.
+=========
+function lenR(x) {
+  if (x.length === 0) return 0; // base case
+  return 1 + lenR(x.slice(1));  // recursive case
+} 
+================
+
+
+✅ You said:
+
+“The 1 is basically looking at the first element from the array?”
+
+Yes — kind of, but with a small twist:
+
+The 1 doesn’t store or use that first element’s value (like x[0]).
+
+It just represents the fact that the first element exists — it’s a count for that element.
+So it’s saying:
+
+“I’ve found one element here — add 1 to the total.”
+
+So:
+🟩 The 1 = “this element exists” (not its value)
+
+✅ You also said:
+
+“Then x.slice(1) removes the first element and counts the rest of the elements?”
+
+Exactly right ✔️
+
+Let’s break that down precisely:
+
+x.slice(1) means “make a new array that starts from index 1.”
+
+So if x = [1, 2, 3, 4], then x.slice(1) becomes [2, 3, 4].
+
+Then lenR(x.slice(1)) is a recursive call to count how many elements are left after the first one.
+
+
+Literally means: return 1 + lenR(x.slice(1));
+
+
+“Count the first element (that’s the +1),
+and then count how many are left by calling the same function again on the rest of the array.”
